@@ -94,7 +94,8 @@ jobs:
     - name: Configure CMake
       id: configure
       shell: bash
-      run: cmake . -B ${{ env.build_dir }} -G "${{ matrix.visual_studio }}" -A x64 -DCMAKE_CUDA_FLAGS="--allow-unsupported-compiler"
+      run: cmake . -B ${{ env.build_dir }} -G "${{ matrix.visual_studio }}" -A x64 
+      # -DCMAKE_CUDA_FLAGS="--allow-unsupported-compiler"
 
     - name: Configure Error Processing
       if: ${{ (failure() && steps.configure.outcome == 'failure') || success() }}
