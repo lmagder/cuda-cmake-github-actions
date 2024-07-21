@@ -11,7 +11,7 @@
 CUDA_PACKAGES_IN=(
     "cuda-compiler"
     "cuda-cudart-dev"
-    "cuda-driver"
+    "cuda-drivers"
     "cuda-driver-dev"
     "cuda-nvtx"
     "cuda-nvrtc-dev"
@@ -105,6 +105,9 @@ do :
         else
             continue
         fi
+     elif [[ "${package}" == cuda-drivers* ]]; then
+        CUDA_PACKAGES+=" ${package}"
+        continue
     fi
     # CUDA 11+ includes lib* / lib*-dev packages, which if they existed previously where cuda-cu*- / cuda-cu*-dev-
     if [[ ${package} == libcu* ]] && version_lt "$CUDA_VERSION_MAJOR_MINOR" "11.0" ; then
@@ -122,7 +125,7 @@ CPU_ARCH="x86_64"
 PIN_FILENAME="cuda-ubuntu${UBUNTU_VERSION}.pin"
 PIN_URL="https://developer.download.nvidia.com/compute/cuda/repos/ubuntu${UBUNTU_VERSION}/${CPU_ARCH}/${PIN_FILENAME}"
 # apt keyring package now available https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
-KERYRING_PACKAGE_FILENAME="cuda-keyring_1.0-1_all.deb"
+KERYRING_PACKAGE_FILENAME="cuda-keyring_1.1-1_all.deb"
 KEYRING_PACKAGE_URL="https://developer.download.nvidia.com/compute/cuda/repos/ubuntu${UBUNTU_VERSION}/${CPU_ARCH}/${KERYRING_PACKAGE_FILENAME}"
 REPO_URL="https://developer.download.nvidia.com/compute/cuda/repos/ubuntu${UBUNTU_VERSION}/${CPU_ARCH}/"
 
