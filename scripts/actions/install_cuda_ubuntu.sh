@@ -11,7 +11,7 @@
 CUDA_PACKAGES_IN=(
     "cuda-compiler"
     "cuda-cudart-dev"
-    "cuda-drivers"
+    # "cuda-drivers"
     "cuda-driver-dev"
     "cuda-nvtx"
     "cuda-nvrtc-dev"
