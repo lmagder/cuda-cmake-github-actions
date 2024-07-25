@@ -67,6 +67,7 @@ $VISUAL_STUDIO_MIN_CUDA = @{
 # @todo - make this easier to vary per CUDA version.
 $CUDA_PACKAGES_IN = @(
     "nvcc";
+    "nvprune";
     "visual_studio_integration";
     "curand_dev";
     "nvrtc_dev";
