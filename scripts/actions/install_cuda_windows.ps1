@@ -70,7 +70,6 @@ $CUDA_PACKAGES_IN = @(
     "nvprune";
     "visual_studio_integration";
     "curand_dev";
-    "nvrtc_dev";
     "cudart";
     "cublas_dev";
     "cublas";
