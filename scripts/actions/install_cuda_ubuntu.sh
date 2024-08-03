@@ -169,7 +169,7 @@ $USE_SUDO apt-get -y install ${CUDA_PACKAGES}
 
 #install this without deps to get the version json file
 $USE_SUDO apt-get -y download cuda-toolkit-${CUDA_MAJOR}-${CUDA_MINOR}
-$USE_SUDO dpkg --force-depends -i cuda-toolkit-${CUDA_MAJOR}-${CUDA_MINOR}.deb
+$USE_SUDO dpkg --force-depends -i cuda-toolkit-${CUDA_MAJOR}-${CUDA_MINOR}_*.deb
 
 if [[ $? -ne 0 ]]; then
     echo "CUDA Installation Error."
